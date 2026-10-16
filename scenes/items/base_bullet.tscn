@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmm8mvkvyvfn5"]
+
+[ext_resource type="Texture2D" uid="uid://cjdhoythu1pc0" path="res://temporary sprites/marmulator/projectile1.png" id="1_3p1gu"]
+[ext_resource type="Script" uid="uid://c2dv5arlmybpk" path="res://scripts/single attached scripts/base_bullet.gd" id="1_qynt6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3p1gu"]
+radius = 25.019993
+
+[node name="BaseBullet" type="Area2D" unique_id=172415655]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_qynt6")
+
+[node name="BulletSprite" type="Sprite2D" parent="." unique_id=944845329]
+texture = ExtResource("1_3p1gu")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1817705465]
+shape = SubResource("CircleShape2D_3p1gu")
+
+[node name="DespawnTimer" type="Timer" parent="." unique_id=670348628]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

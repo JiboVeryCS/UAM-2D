@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://be56qs0dmcc4b"]
+
+[ext_resource type="Script" uid="uid://hredj8nyqjrj" path="res://scripts/single attached scripts/subtraction_zone.gd" id="1_0aoxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4en6x"]
+size = Vector2(0, 0)
+
+[node name="subtractionZone" type="Area2D" unique_id=1678037188]
+script = ExtResource("1_0aoxt")
+
+[node name="emptyCollision" type="CollisionShape2D" parent="." unique_id=1567426603]
+shape = SubResource("RectangleShape2D_4en6x")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

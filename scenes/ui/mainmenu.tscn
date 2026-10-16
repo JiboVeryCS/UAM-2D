@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c41urxr6hrftv"]
+
+[ext_resource type="Script" uid="uid://bcda0omkxat7a" path="res://scripts/single attached scripts/main_menu.gd" id="1_cmhrf"]
+
+[node name="Control" type="Control" unique_id=1191969199]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cmhrf")
+
+[node name="Singleplayer" type="Button" parent="." unique_id=1124066232]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 80.0
+offset_right = 1910.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 150
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="." unique_id=1765927087]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 537.0
+offset_right = 1910.0
+offset_bottom = 981.0
+theme_override_font_sizes/font_size = 150
+text = "Multiplayer"
+
+[node name="Collection" type="Button" parent="." unique_id=170464370]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 994.0
+offset_right = 1910.0
+offset_bottom = 1438.0
+theme_override_font_sizes/font_size = 150
+text = "Collection"
+
+[node name="Options" type="Button" parent="." unique_id=1157948011]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 1451.0
+offset_right = 1910.0
+offset_bottom = 1663.0
+theme_override_font_sizes/font_size = 100
+text = "Options"
+
+[node name="Credits" type="Button" parent="." unique_id=91646996]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 1668.0
+offset_right = 1910.0
+offset_bottom = 1880.0
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="Quit" type="Button" parent="." unique_id=999211931]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 1885.0
+offset_right = 1910.0
+offset_bottom = 2097.0
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[connection signal="pressed" from="Singleplayer" to="." method="_on_singleplayer_pressed"]

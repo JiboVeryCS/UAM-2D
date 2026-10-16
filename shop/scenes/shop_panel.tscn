@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://csx0sxd4sqgo6"]
+
+[ext_resource type="Script" uid="uid://d21bh73q1vk1n" path="res://shop/scripts/shop_panel.gd" id="1_ryic6"]
+[ext_resource type="FontFile" uid="uid://bvo1gfe0ms8p6" path="res://fonts/montserrat.black-italic.ttf" id="2_ryic6"]
+
+[node name="shopPanel" type="Panel" unique_id=420024660]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(2705, 200)
+offset_right = 2705.0
+offset_bottom = 200.0
+script = ExtResource("1_ryic6")
+
+[node name="Button" type="Button" parent="." unique_id=783833880]
+layout_mode = 0
+offset_right = 2705.0
+offset_bottom = 200.0
+
+[node name="itemTexture" type="TextureRect" parent="." unique_id=980822571]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 225.0
+offset_bottom = 200.0
+expand_mode = 1
+
+[node name="itemName" type="Label" parent="." unique_id=550917860]
+layout_mode = 0
+offset_left = 250.0
+offset_right = 1978.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_ryic6")
+theme_override_font_sizes/font_size = 121
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="." unique_id=678172465]
+layout_mode = 0
+offset_left = 2003.0
+offset_right = 2655.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_ryic6")
+theme_override_font_sizes/font_size = 121
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

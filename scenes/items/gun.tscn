@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cg8kkbdwm2bry"]
+
+[ext_resource type="Script" uid="uid://qhgkxu3n3juu" path="res://scripts/single attached scripts/gun.gd" id="1_og67c"]
+[ext_resource type="Texture2D" uid="uid://sg3vok8gn13u" path="res://temporary sprites/marmulator/gun1.png" id="1_x77fm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_og67c"]
+radius = 21.0
+height = 144.0
+
+[node name="Gun" type="Area2D" unique_id=1346518078]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_og67c")
+
+[node name="GunSprite" type="Sprite2D" parent="." unique_id=389421697]
+texture = ExtResource("1_x77fm")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1101967324]
+shape = SubResource("CapsuleShape2D_og67c")
+
+[node name="Gunpoint" type="Node2D" parent="." unique_id=1137054113]
+position = Vector2(0, -75)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

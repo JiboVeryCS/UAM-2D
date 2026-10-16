@@ -1,0 +1,71 @@
+{
+	"items": [
+		{
+			"id" : 0,
+			"rarity": 3,
+			"itemName": "real gumli",
+			"description": "i stole her",
+			"texture": "gummed.png"
+		},
+		{
+			"id" : 1,
+			"rarity": 2,
+			"itemName": "the marmler",
+			"description": "i HATE females",
+			"texture": "temporary sprites/marmulator/realmarmi.png"
+		},
+		{
+			"id" : 2,
+			"rarity": 2,
+			"itemName": "the marmler copy",
+			"description": "i HATE females too",
+			"texture": "temporary sprites/marmulator/realmarmi.png"
+		},
+		{
+			"id" : 3,
+			"rarity" : 0,
+			"itemName": "Oak Wood",
+			"description": "wood",
+			"texture": "temporary sprites/oakWood.png"
+		},
+		
+		{
+			"id": 4,
+			"rarity": 0,
+			"itemName": "Stick",
+			"description": "A stick from a tree",
+			"texture": "temporary sprites/stick.png"
+		}
+	],
+	"crafts":
+		[
+			{
+				"id": 0,
+				"tier": 0,
+				"itemName": "wooden gun",
+				"type": 0,
+				"points": 100,
+				"description": "basic wooden gun",
+				"texture": "temporary sprites/wooden gun.png",
+				
+				"IDOne": 3,
+				"quantityOne": 2,
+				"IDTwo": 4,
+				"quantityTwo": 1
+			},
+			{
+				"id": 1,
+				"tier": 1,
+				"itemName": "default gun",
+				"type": 0,
+				"points": 67,
+				"description": "woah marmi, where did you get that from?",
+				"texture": "temporary sprites/marmulator/gun1.png",
+				
+				"IDOne": 1,
+				"quantityOne": 10,
+				"IDTwo": 0,
+				"quantityTwo": 3
+			}
+		]
+}

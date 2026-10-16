@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dui317hhkis28"]
+
+[ext_resource type="Script" uid="uid://dxv1ak376jfuo" path="res://scripts/multi attached scripts/item_code.gd" id="1_81ku8"]
+[ext_resource type="Texture2D" uid="uid://b7dak58brdj14" path="res://temporary sprites/stick.png" id="2_y02fc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggapi"]
+radius = 347.46655
+
+[node name="stick" type="Area2D" unique_id=95204838 node_paths=PackedStringArray("sprite")]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_81ku8")
+item = "stick"
+itemDescription = "A stick from a tree"
+texturePath = "res://temporary sprites/stick.png"
+rotateSprite = true
+sprite = NodePath("Stick")
+ID = 4
+
+[node name="Stick" type="Sprite2D" parent="." unique_id=1164025843]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_y02fc")
+
+[node name="CollectingArea" type="CollisionShape2D" parent="." unique_id=744091823]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_ggapi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

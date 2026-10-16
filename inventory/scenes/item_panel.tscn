@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://drwnsjbem0roc"]
+
+[ext_resource type="Script" uid="uid://drpkrqjashu45" path="res://inventory/scripts/item_panel.gd" id="1_mbeig"]
+[ext_resource type="Texture2D" uid="uid://yq80s1yhvetm" path="res://temporary sprites/containerSprite.png" id="2_yj5fg"]
+[ext_resource type="FontFile" uid="uid://bvo1gfe0ms8p6" path="res://fonts/montserrat.black-italic.ttf" id="3_yj5fg"]
+
+[node name="ItemPanel" type="Panel" unique_id=2051211120]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_mbeig")
+
+[node name="containerSprite" type="TextureRect" parent="." unique_id=660295309]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yj5fg")
+
+[node name="emptyItemSprite" type="TextureRect" parent="." unique_id=18879952]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="itemQuantity" type="Label" parent="." unique_id=118634468]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 161.0
+offset_right = 219.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("3_yj5fg")
+theme_override_font_sizes/font_size = 35
+
+[connection signal="mouse_entered" from="emptyItemSprite" to="." method="_on_empty_item_sprite_mouse_entered"]

@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://c70d0ww8ax4i4"]
+
+[ext_resource type="Script" uid="uid://m672qqh65ry6" path="res://shop/scripts/crafting_ui.gd" id="1_nlbxe"]
+[ext_resource type="FontFile" uid="uid://bvo1gfe0ms8p6" path="res://fonts/montserrat.black-italic.ttf" id="1_vpbi3"]
+[ext_resource type="PackedScene" uid="uid://csx0sxd4sqgo6" path="res://shop/scenes/shop_panel.tscn" id="2_b8ntm"]
+
+[node name="craftingUI" type="CanvasLayer" unique_id=1292348759]
+process_mode = 3
+
+[node name="Control" type="Control" parent="." unique_id=589441106]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nlbxe")
+
+[node name="bgColor" type="ColorRect" parent="Control" unique_id=380865058]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="itemMenuColor" type="ColorRect" parent="Control" unique_id=18786007]
+layout_mode = 0
+offset_left = 567.5
+offset_top = 41.0
+offset_right = 3272.5
+offset_bottom = 1059.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="itemBgColor" type="ColorRect" parent="Control" unique_id=1448755536]
+layout_mode = 0
+offset_left = 617.5
+offset_top = 98.5
+offset_right = 1015.5
+offset_bottom = 496.5
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="itemTexture" type="TextureRect" parent="Control/itemBgColor" unique_id=2074856909]
+layout_mode = 0
+offset_right = 398.5
+offset_bottom = 398.5
+expand_mode = 1
+
+[node name="BottomLeft" type="ColorRect" parent="Control" unique_id=908681839]
+layout_mode = 0
+offset_left = 617.5
+offset_top = 704.0
+offset_right = 1905.25
+offset_bottom = 829.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="BLTexture" type="TextureRect" parent="Control/BottomLeft" unique_id=1077157562]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 135.0
+offset_bottom = 125.0
+expand_mode = 1
+
+[node name="BLLabel" type="Label" parent="Control/BottomLeft" unique_id=919893554]
+layout_mode = 0
+offset_left = 155.0
+offset_right = 1288.25
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 100
+vertical_alignment = 1
+
+[node name="BottomRight" type="ColorRect" parent="Control" unique_id=861711003]
+layout_mode = 0
+offset_left = 1935.25
+offset_top = 704.0
+offset_right = 3223.0
+offset_bottom = 829.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="BLTexture" type="TextureRect" parent="Control/BottomRight" unique_id=413770761]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 135.0
+offset_bottom = 125.0
+expand_mode = 1
+
+[node name="BLLabel" type="Label" parent="Control/BottomRight" unique_id=224601911]
+layout_mode = 0
+offset_left = 155.0
+offset_right = 1288.25
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 100
+vertical_alignment = 1
+
+[node name="TopLeft" type="ColorRect" parent="Control" unique_id=1156224931]
+layout_mode = 0
+offset_left = 617.5
+offset_top = 554.0
+offset_right = 1905.25
+offset_bottom = 679.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="BLTexture" type="TextureRect" parent="Control/TopLeft" unique_id=212084526]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 135.0
+offset_bottom = 125.0
+expand_mode = 1
+
+[node name="BLLabel" type="Label" parent="Control/TopLeft" unique_id=1658040703]
+layout_mode = 0
+offset_left = 155.0
+offset_right = 1288.25
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 100
+vertical_alignment = 1
+
+[node name="TopRight" type="ColorRect" parent="Control" unique_id=1253100466]
+layout_mode = 0
+offset_left = 1935.25
+offset_top = 554.0
+offset_right = 3223.0
+offset_bottom = 679.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4)
+
+[node name="BLTexture" type="TextureRect" parent="Control/TopRight" unique_id=339996711]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 135.0
+offset_bottom = 125.0
+expand_mode = 1
+
+[node name="BLLabel" type="Label" parent="Control/TopRight" unique_id=1107180880]
+layout_mode = 0
+offset_left = 155.0
+offset_right = 1288.25
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 100
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=312351948]
+layout_mode = 0
+offset_left = 567.5
+offset_top = 1126.0
+offset_right = 3272.5
+offset_bottom = 2093.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=1959478079]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="shopPanel" parent="Control/ScrollContainer/VBoxContainer" unique_id=420024660 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel4" parent="Control/ScrollContainer/VBoxContainer" unique_id=1853581427 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel3" parent="Control/ScrollContainer/VBoxContainer" unique_id=1362225837 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel2" parent="Control/ScrollContainer/VBoxContainer" unique_id=518138387 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel5" parent="Control/ScrollContainer/VBoxContainer" unique_id=635181920 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel6" parent="Control/ScrollContainer/VBoxContainer" unique_id=2135355850 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel7" parent="Control/ScrollContainer/VBoxContainer" unique_id=1419012478 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="shopPanel8" parent="Control/ScrollContainer/VBoxContainer" unique_id=1863480630 instance=ExtResource("2_b8ntm")]
+layout_mode = 2
+
+[node name="itemName" type="Label" parent="Control" unique_id=1807196538]
+layout_mode = 0
+offset_left = 1065.5
+offset_top = 98.5
+offset_right = 3223.0
+offset_bottom = 221.5
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 100
+
+[node name="itemName2" type="Label" parent="Control" unique_id=496290197]
+layout_mode = 0
+offset_left = 1065.5
+offset_top = 241.5
+offset_right = 3223.0
+offset_bottom = 496.5
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 30
+
+[node name="craftButton" type="Button" parent="Control" unique_id=1169385694]
+layout_mode = 0
+offset_left = 617.5
+offset_top = 849.0
+offset_right = 3223.0
+offset_bottom = 1039.0
+theme_override_fonts/font = ExtResource("1_vpbi3")
+theme_override_font_sizes/font_size = 150
+text = "CRAFT!"
+
+[connection signal="pressed" from="Control/craftButton" to="Control" method="_on_craft_button_pressed"]

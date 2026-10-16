@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://clanui6py85gf"]
+
+[ext_resource type="Script" uid="uid://bgmf6hyj4k324" path="res://shop/scripts/gumli_shop.gd" id="1_8p4un"]
+[ext_resource type="Texture2D" uid="uid://5eki6ogun34a" path="res://gummed.png" id="1_idcpd"]
+[ext_resource type="Texture2D" uid="uid://b7ovcpjb0c6gk" path="res://temporary sprites/marmulator/marmishop.png" id="2_8p4un"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jd2vd"]
+radius = 340.0
+height = 733.3333
+
+[node name="gumliShop" type="StaticBody2D" unique_id=1744210067]
+process_mode = 3
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_8p4un")
+
+[node name="Gummed" type="Sprite2D" parent="." unique_id=2100569726]
+scale = Vector2(2.5078125, 0.9499999)
+texture = ExtResource("1_idcpd")
+
+[node name="Marmishop" type="Sprite2D" parent="." unique_id=1304289901]
+position = Vector2(2, -3)
+texture = ExtResource("2_8p4un")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1349124521]
+polygon = PackedVector2Array(-182, 49, -229, 105, -229, 243, 235, 243, 235, 103, 188, 49)
+
+[node name="hitboxArea" type="Area2D" parent="." unique_id=185741144]
+
+[node name="hitbox" type="CollisionShape2D" parent="hitboxArea" unique_id=1601931582]
+position = Vector2(0, 33.333332)
+shape = SubResource("CapsuleShape2D_jd2vd")
+
+[connection signal="area_entered" from="hitboxArea" to="." method="_on_hitbox_area_area_entered"]
+[connection signal="area_shape_exited" from="hitboxArea" to="." method="_on_hitbox_area_area_shape_exited"]
+[connection signal="body_entered" from="hitboxArea" to="." method="_on_hitbox_area_body_entered"]
+[connection signal="body_exited" from="hitboxArea" to="." method="_on_hitbox_area_body_exited"]

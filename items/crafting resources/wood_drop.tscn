@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c2l5gfwtyh51j"]
+
+[ext_resource type="Script" uid="uid://dxv1ak376jfuo" path="res://scripts/multi attached scripts/item_code.gd" id="1_14vut"]
+[ext_resource type="Texture2D" uid="uid://dv7arh7xedkrd" path="res://temporary sprites/oakWood.png" id="2_nlhtu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xym4r"]
+radius = 347.46655
+
+[node name="WoodDrop" type="Area2D" unique_id=613028791 node_paths=PackedStringArray("sprite") groups=["items"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_14vut")
+item = "wood"
+itemDescription = "Plain wood. Can be used for various of things."
+texturePath = "res://temporary sprites/oakWood.png"
+rotateSprite = true
+sprite = NodePath("woodSprite")
+ID = 3
+
+[node name="woodSprite" type="Sprite2D" parent="." unique_id=1276400853]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_nlhtu")
+
+[node name="CollectingArea" type="CollisionShape2D" parent="." unique_id=1054365551]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_xym4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c3gr0clqlfton"]
+
+[ext_resource type="Texture2D" uid="uid://cyfom5pujq4hr" path="res://temporary sprites/marmulator/marmi.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bl5epqedbseol" path="res://players/player_class.gd" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://chryrmip3xyil" path="res://scripts/single attached scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cglija1ulye2t" path="res://scripts/single attached scripts/player_camera.gd" id="3_qhqgy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g2els"]
+b = Vector2(38, -81)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 68.31683
+height = 136.63367
+
+[node name="TeamPlayer2D" type="CharacterBody2D" unique_id=1330833840 groups=["player"]]
+script = ExtResource("1_dqkch")
+metadata/_custom_type_script = "uid://bl5epqedbseol"
+
+[node name="marmiPlayer" type="CharacterBody2D" parent="." unique_id=694763218 groups=["player"]]
+script = ExtResource("1_g2els")
+
+[node name="Marmi" type="Sprite2D" parent="." unique_id=1867539886]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_3vyb7")
+offset = Vector2(-6.666664, 17.777779)
+
+[node name="RotationBar" type="CollisionShape2D" parent="Marmi" unique_id=1701827348]
+scale = Vector2(2.2222223, 2.2222223)
+shape = SubResource("SegmentShape2D_g2els")
+
+[node name="EquipmentPosition" type="Node2D" parent="Marmi/RotationBar" unique_id=1241049937]
+position = Vector2(38, -81.00001)
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=478077852]
+scale = Vector2(1.005, 0.995)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="MarmiCamera" type="Camera2D" parent="." unique_id=1385156940]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("3_qhqgy")
+
+[node name="tright" type="Timer" parent="MarmiCamera" unique_id=2127769686]
+
+[node name="tleft" type="Timer" parent="MarmiCamera" unique_id=408658138]
+
+[connection signal="timeout" from="MarmiCamera/tright" to="MarmiCamera" method="_on_tright_timeout"]
+[connection signal="timeout" from="MarmiCamera/tright" to="MarmiCamera" method="_on_timer_timeout" flags=18 binds= [1]]
+[connection signal="timeout" from="MarmiCamera/tleft" to="MarmiCamera" method="_on_timer_timeout" flags=18 binds= [-1]]

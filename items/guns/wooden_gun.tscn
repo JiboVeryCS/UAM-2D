@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqpkptycdv51l"]
+
+[ext_resource type="Texture2D" uid="uid://diyosl52gxaas" path="res://temporary sprites/wooden gun.png" id="1_rse0t"]
+
+[node name="WoodenGun" type="Sprite2D" unique_id=1662550746]
+texture = ExtResource("1_rse0t")
